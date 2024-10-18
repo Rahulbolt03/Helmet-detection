@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <form method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="reg_number">Register Number:</label><br>
+        <input type="text" id="reg_number" name="reg_number" required><br>
+
+        <label for="department">Department:</label><br>
+        <input type="text" id="department" name="department" required><br>
+
+        <label for="number_plate">Number Plate:</label><br>
+        <input type="text" id="number_plate" name="number_plate" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Students Information:</h2>
+    <ul>
+    {% for student in students %}
+        <li>Name: {{ student.name }}, Register Number: {{ student.reg_number }}, Department: {{ student.department }}, Number Plate: {{ student.number_plate }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
